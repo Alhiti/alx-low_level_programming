@@ -6,28 +6,33 @@
 */
 int main(void)
 {
-		int i, j, k;
 
-		i = 0;
+	int i, j, k;
 
-		while (i < 100)
+	i = 0;
+
+	while (i < 100)
+	{
+		j = i % 10; /* singles digit */
+		k = i / 10; /* doubles digit */
+
+		if (k < j)
 		{
-			j = i % 10; /* singles digit */
-			k = i / 10; /* doubles digit */
+			putchar(k + '0');
+			putchar(j + '0');
 
-			if (k < j)
+			if (i < 89)
+
 			{
-																									putchar(k + '0');
-																									putchar(j + '0');
 
-																									if (i < 89)
-																									{
-																										putchar(44);
-																										putchar(32);																		}
-																								}
-			i++;
+				putchar(44);
+
+				putchar(32);																		}
 		}
-		putchar('\n');
+		i++;
 
-		return (0);
+	}
+	putchar('\n');
+
+	return (0);
 }
